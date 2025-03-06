@@ -158,7 +158,7 @@ pdfauthor = {}
             \item \textbf{Strength:} The infographic uses a limited color palette (red, black, and gray) to highlight key information, making efficient use of ink.
             \item \textbf{Improvement:} Some decorative elements, such as diagonal lines in the background, do not contribute to the data itself and could be removed to improve readability.
         \end{itemize}
-
+        
         \item \textbf{Chartjunk (Avoiding Unnecessary Clutter)}
         \begin{itemize}
             \item \textbf{Strength:} The design is clean, with minimal distractions. Icons and small visual elements are used meaningfully.
@@ -214,17 +214,52 @@ pdfauthor = {}
 
         \end{enumerate}
     \end{enumerate}
-        \item c
-        \item d
+        \item The answer from the chatbot includes the principles by Tufte present in the lecture material, including many additional principles. It is not a bad thing in itself, but incoherent information raises confusion regarding what is the set of Tuftes principles. The analysis is, in my opinion, good and well-structured. It briefly mentions a strength and an improvement for each principle. Then again, some of the points are a bit too brief, and leave out information I think would be good to present.
+        \item Improving the analysis based on the answer from ChatGPT:
+        \begin{enumerate}
+            \item \textbf{Data-ink}
+                \begin{itemize}
+                    \item \textbf{Strengths:} The visualization presents the data and the message of the graphic clearly.
+                    \item \textbf{Improvements:} The data-ink ration is sufficiently high, but could be improved by removing eyecandy, such as images of people and diagonal non-data lines.
+                \end{itemize}
+            \item \textbf{Chartjunk}
+                \begin{itemize}
+                    \item \textbf{Strengths:} The design is clean, with minimal distractions. Icons and small visual elements are used meaningfully.
+                    \item \textbf{Improvements:} The visualization contains quite a lot of chartjunk, for example the eyecandy mentioned in the previous section. I imagine the point of including the eyecandy is to provoke feelings in the viewer, but in doing so, it may distract the viewer from the data itself. Removing unnecessary eyecandy may improve readability.
+                \end{itemize}
+            \item \textbf{Multifunctioning graphical elements}
+                \begin{itemize}
+                    \item \textbf{Strengths:} The visualization does not visualize multivariate data, but it collects multiple effects of poverty into one graphic and presents them in a clear manner.
+                    \item \textbf{Improvements:} Plotting the data somehow in the same graphs could help the viewer see the relationships across the data.
+                \end{itemize}
+            \item \textbf{Data density and small multiples}
+                \begin{itemize}
+                    \item \textbf{Strengths:} The infographic presents a large amount of information concisely, using percentages and icons to convey meaning. Most of the graphs in the visualization have high data density, such as the bar graph on the bottom of the visualization.
+                    \item \textbf{Improvements:} Some sections, such as the vulnerability to disasters, might benefit from more data density. Lower data density makes for a easily viewable visualization, but the data density could be easily improved by removing some of the clutter and enlargening the graph.
+                \end{itemize}
+            \item \textbf{Aesthetics and techniques}
+                \begin{itemize}
+                    \item \textbf{Strengths:} The visualization is very aesthetically pleasing. The style of the visualization is consistent all across, and it is also consistent with the aesthetics of the SDG program, and plots of other SDGs. The visualization works as a standalone, and also as a part of the UN website it is posted in. All of the text is using the same font, making reading easy and non-obtrusive. In the text, there are some highlighted words, which grasp the attention of the reader, making the visualization more striking to the viewer. The color scheme is composed, containing only 1 or 2 shades of gray and maybe 5 shades of red, which are all really similar. The line weight is very light, letting the data do the talking. The lettering is varying, the more important stuff is larger than the less important. And finally, the graphics do have greater width than height, easing the viewing.
+                    \item \textbf{Improvements:} I think all aesthetic decisions should have a meaning, and I can't come up with a meaning as to why the diagonal lines are present in the visualization. Maybe it makes eases viewing the visualization, but I think they could have also just used the same light red tone instead, or remove them altogether.
+                \end{itemize}
+        \end{enumerate}
 \end{enumerate}
     
 \end{enumerate}
 \subsection{Dataset exploration}
 \begin{enumerate}
-    \item a
-    \item b
+    \item I picked a dataset that contains the percentage of population for a country under the poverty line for a given year. The dataset includes data for 183 countries across 1981-2019. Instead of using the United Nations defined poverty line of US\$2.15 per day, the dataset has data for population earning less than US\$30 daily. The dataset is publicly available at \cite{data}.
+    \item I used the dataset to plot the share of countries where over 80\% of the population live in poverty per continent by year. Figure \ref{fig:plot} shows the result. I used \texttt{matplotlib}'s \texttt{pyplot} environment for plotting the data. We can see from the visualization, that Europe's population has been steadily getting wealthier. On the flipside, the visualization also shows that through the decades, some continents, like Africa and Asia, have been stagnant in wealthiness. This visualization does not explain the underlying reasons for the evolution or lack of it, but simply visualizes the share of population living in poverty. I designed in such a way, that seeing the decrease of poverty per continent could be seen from the first glance, while keeping redundant and obsolete elements at a minimum. 
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\linewidth]{reports/assignment-1/imgs/plot.png}
+        \caption{Plot on poverty per continent}
+        \label{fig:plot}
+    \end{figure}
 \end{enumerate}
 
+\newpage
 \bibliography{refs}
 
 \end{document}
