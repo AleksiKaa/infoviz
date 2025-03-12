@@ -86,14 +86,22 @@ I used the same libraries and techniques as in task 1. As such, I had hardly any
 
 \section{Visualizing High-Dimensional Data}
 
-In the final task of the assignment
+In the final task of the assignment, high-dimensional data had to be visualized. I used the same dataset for the poverty shares as in task 1 and 2, but in addition to that, I also used a dataset on human development indices published by the United Nations. The dataset is publicly available at \cite{data2}. The dataset lists a number of statistics relating to countries' development in the year 2015. I identified the variables "Life Expectancy at Birth", "Expected Years of Education" and "Gross National Income (GNI) per Capita", as variables that could be related to a country's poverty rate. In order to visualize the data in the way I wanted to, I had to extract the data for the year 2015 from the first dataset, and then join it with the second dataset on the countries' names.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\linewidth]{reports/assignment-2/imgs/task3.png}
     \caption{Task 3 visualization}
     \label{fig:viz3}
 \end{figure}
+
+In figure \ref{fig:viz3}, for each country in the dataset, the pairwise relationships between the variables "Life Expectancy at Birth", "Expected Years of Education" and "GNI per Capita" have been plotted as scatterplots. That is to say, each dot on a graph represents a country, with $y = f(x)$ for the variables marked on the axis.  The distributions of the variables are plotted on the diagonal. Additionally, the scatterplots' dots have a colormap added to them. The colormap represents the magnitude of the share of that country's population living under the poverty line. The visualization reveals a clear correlation between the variables, showing that larger numbers in each of the variables result in a smaller poverty share. Rather unsurprisingly though, a country having a large GNI per capita means a lower poverty share without exception.
+
+I thought about which variables to include in the visualization for a long time. All of the variables "Life Expectancy at Birth", "Expected Years of Education" and "GNI per Capita" are among the main statistics used for calculating a country's Human Development Index (HDI). United Nations themselves state, that the HDI "does not reflect on inequalities, poverty, human security, empowerment, etc" \cite{hdi}. I wanted to see, whether there is a relationship between poverty and the HDI statistics by comparing them in this task.
+
+I had some struggles with the data preprocessing and transformations. For example, assigning the percentages to bins was new to me, and joining the two datasets caused some minor headache as well. Again, reading the documentation solved the problems quickly.
+
+\newpage
 
 \bibliography{reports/assignment-2/refs}
 
