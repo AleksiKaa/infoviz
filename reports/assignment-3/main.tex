@@ -55,13 +55,9 @@ In this assignment, I have completed two visualization tasks using data relating
 
 \section{Maps and Colormaps}
 
-In this task, I created two chorophleth maps using the poverty data. The graphs were created using \texttt{plotly}'s \texttt{choropleth} tool. Figure \ref{fig:viz1} shows the data colored with a sequential colormap, whereas figure \ref{fig:viz2} plots the normalized data using a diverging colormap. 
+In this task, I created two chorophleth maps using the poverty data. The graphs were created using \texttt{plotly}'s \texttt{choropleth} tool. Figure \ref{fig:viz1} shows the data colored with a sequential colormap, whereas figure \ref{fig:viz2} plots the data using a diverging colormap.
 
-The data used in figure \ref{fig:viz2} was normalized with the formula:
-\begin{align*}
-x^{\prime} = \frac{x - \hat{x}}{\max{|x|}},
-\end{align*}
-where $x$ is a vecotr of real numbers, $\hat{x}$ is the mean of $x$, and $\max{|x|}$ is the maximum value of the absolute values of $x$. The normalization results in a zero-mean vector, with all values in range $[-1, 1]$. Thus figure \ref{fig:viz2} show cases the countries' relative deviation from the mean share of population living in poverty.
+Figure \ref{fig:viz1} shows the share of population living under the poverty line for each country in 2015. The dataset used did not have data for every country in the world, missing countries are marked with grey on the map. Missing countries include Greenland, New Zealand, Libya etc. In the visualization, the darker the color, the larger the share of poverty in the country. The visualization shows clearly, that most of the countries in the world are poverty ridden even in the year 2015. I decided to use a yellow-red colormap, since humans usually associate a dark red color with something bad, and lighter colors with something more desirable.
 
 \begin{figure}[h]
     \centering
@@ -70,6 +66,12 @@ where $x$ is a vecotr of real numbers, $\hat{x}$ is the mean of $x$, and $\max{|
     \label{fig:viz1}
 \end{figure}
 
+The data used in figure \ref{fig:viz2} was shifted so that the neutral value was at 50\% with the formula:
+\begin{align*}
+x^{\prime} = x - 50,
+\end{align*}
+where $x$ is a vector of real numbers. Thus figure \ref{fig:viz2} showcases the countries' deviation from the 50\% share of population living in poverty. I used a blue-red colormap, where blue is in the negative values, and red in the positive values, creating a 'temperature' scale. It is in my opinion an intuitive way of visualizing a diverging dataset, since the connection to thermometers is so evident.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=1.0\linewidth]{reports/assignment-3/imgs/task1-2.png}
@@ -77,7 +79,11 @@ where $x$ is a vecotr of real numbers, $\hat{x}$ is the mean of $x$, and $\max{|
     \label{fig:viz2}
 \end{figure}
 
+I had no major challenges plotting the maps after finding the \texttt{plotly} library, which provides the ready made implementation for plotting choropleth maps. Reading the documentation of the functions helped understand the different parameters needed, and completing the task.
+
 \section{Heatmaps and Clustermaps}
+
+
 
 \bibliography{reports/assignment-3/refs}
 
