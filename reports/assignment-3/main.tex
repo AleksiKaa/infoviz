@@ -1,0 +1,63 @@
+%--------------------
+% Packages
+% -------------------
+\documentclass[11pt,a4paper,titlepage]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{gentium}
+\usepackage{mathptmx} % Use Times Font
+
+
+\usepackage[pdftex]{graphicx} % Required for including pictures
+\usepackage[english]{babel} % Swedish translations
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage{enumitem} % Includes lists
+
+\frenchspacing % No double spacing between sentences
+\linespread{1.2} % Set linespace
+\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry} %margins
+%\usepackage{parskip}
+
+\usepackage[all]{nowidow} % Tries to remove widows
+\usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
+
+%-----------------------
+% Set pdf information and add title, fill in the fields
+%-----------------------
+\hypersetup{ 	
+pdfsubject = {},
+pdftitle = {},
+pdfauthor = {}
+}
+
+%-----------------------
+% Begin document
+%-----------------------
+
+\begin{document} %All text i dokumentet hamnar mellan dessa taggar, allt ovanför är formatering av dokumentet
+\bibliographystyle{ieeetr}
+
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\Huge \textbf{\underline{CS-E4840}}}\\[0.5cm]
+  {\Huge \textbf{\underline{\parbox{0.8\linewidth}{\centering Information Visualization D}}}}\\[1.0cm]
+  {\Large \textbf{Assignment 3: Human Factors}} \\
+  [1.0cm]
+  {\Large Aleksi Kääriäinen (728971)}\\[1.0cm]
+  {\Large \today}
+\end{titlepage}
+
+\section*{Introduction}
+In this assignment, I have completed two visualization tasks using data relating to the SDG selected in assignment 1. Restating just for clarity, I picked SDG number 1, No poverty, for the topic of the assignments. Both tasks in this use the same dataset, that has also been used in assignments 1 and 2. The dataset includes data for the share of population living under the poverty line (daily income of US\$30) for most of the countries in the world in the time interval of years 1981-2019. The dataset is publicly available at \cite{data}.
+
+\section{Maps and Colormaps}
+
+In this
+
+\section{Heatmaps and Clustermaps}
+
+\bibliography{reports/assignment-3/refs}
+
+\end{document}
