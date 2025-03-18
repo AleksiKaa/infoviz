@@ -79,11 +79,37 @@ where $x$ is a vector of real numbers. Thus figure \ref{fig:viz2} showcases the 
     \label{fig:viz2}
 \end{figure}
 
-I had no major challenges plotting the maps after finding the \texttt{plotly} library, which provides the ready made implementation for plotting choropleth maps. Reading the documentation of the functions helped understand the different parameters needed, and completing the task.
+I had no major challenges plotting the maps after finding the \texttt{plotly} library, which provides the ready made implementation for plotting choropleth maps. Reading the documentation of the functions helped to understand the different parameters needed and complete the task.
 
 \section{Heatmaps and Clustermaps}
 
+In this task, I visualized part of the dataset as a heatmap and a clustermap. In order to make the plots less cluttered, I used only a subset of the countries present in the dataset. I decided to visualize the evolution of the poverty rate in Central and Western European countries in the years 1981-2019. I used only those countries which have data for the full time interval, meaning that a few countries classified as Western or Central European are missing. There are 13 countries and 39 years in total, resulting in a 13x39 matrix used in the heatmaps.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\linewidth]{reports/assignment-3/imgs/task2-1.png}
+    \caption{Task 2 visualization (a)}
+    \label{fig:viz3}
+\end{figure}
+
+Figure \ref{fig:viz3} shows the matrix plotted as a heatmap. The rows are countries in alphabetical order, and the years are also ordered. The colormap used is a diverging one, sliding from red to blue. The neutral value in this plot is 50. A diverging colormap shows instantly which values are below/above the neutral value and shows the differences between countries in a striking fashion. In my opinion, sorting the countries in alphabetical order does not ease reading the visualization much, but it does help fetching data for a single country. Maybe the benefits of alphabetical ordering would be more apparent, if more countries were used in the visualization.
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{reports/assignment-3/imgs/task2-2.png}
+    \caption{Task 2 visualization (b)}
+    \label{fig:viz4}
+\end{figure}
+
+Figure \ref{fig:viz4} shows the same data as in figure \ref{fig:viz3} this time plotted as a clustermap. The plot uses the same colormap for the same reasons as above. Clustering is done only on rows, since clustering the columns would have broken the temporal structure of the data. The similarity metric used for clustering is Euclidean distance, which is well suited for vectors of real numbers, and the clustering method is the average of clusters. Clustering by the average of the clusters works really well, as seen in the plot.
+
+In my opinion, the clustermap is much easier to read since the rows have been clustered based on relative similarity, rather than sorted alphabetically. The clustering makes fetching answers to questions such as "Which countries have gotten wealthier over the years?" or "Which countries' share of poverty has stayed similar?" simple and quick.
+
+I used the \texttt{seaborn} library for both visualizations in the task. At this point, \texttt{seaborn} is becoming pretty familiar to me. At first I had some trouble plotting the clustermap though. My code threw a cryptic error, but after studying the error and my data for a while, it turned out that the error was caused by NaN values in the data. After filtering out the rows that contained NaN values, the issue was fixed and I could complete the visualizations.
+
+\newpage
 
 \bibliography{reports/assignment-3/refs}
 
