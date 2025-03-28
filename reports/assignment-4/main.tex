@@ -49,14 +49,37 @@ pdfauthor = {}
 
 \section*{Introduction}
 
+In this assignment, I have completed two visualization tasks using data relating to the SDG selected in assignment 1. Restating just for clarity, I picked SDG number 1, No poverty, for the topic of the assignments. Both tasks in this use the same dataset, that has also been used in previous assignments. The dataset includes data for the share of population living under the poverty line (daily income of US\$30) for most of the countries in the world in the time interval of years 1981-2019. The dataset is publicly available at \cite{data}.
+
 \section{Dimensionality Reduction}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/pca.png}
+    \caption{Task 1 visualization (a)}
+    \label{fig:pca}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/mds.png}
+    \caption{Task 1 visualization (b)}
+    \label{fig:mds}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/tsne.png}
+    \caption{Task 1 visualization (c)}
+    \label{fig:tsne}
+\end{figure}
 
 \section{Relational Data}
 
 \begin{table}[h]
     \centering
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{c|ccccccccccccccccc}
+    \renewcommand{\arraystretch}{1}
+    \scalebox{0.7}{\begin{tabular}{c|ccccccccccccccccc}
         & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 \\ \hline
       1  & 0 & 1 & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
       2  &   & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -76,11 +99,34 @@ pdfauthor = {}
      16  &   &   &   &   &   &   &   &   &   &   &   &   &   &   &   & 0 & 1 \\
      17  &   &   &   &   &   &   &   &   &   &   &   &   &   &   &   &   & 0 \\
     \end{tabular}
+    }
     \caption{Adjacency matrix of SDGs}
+    \label{adj}
 \end{table}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/radial.png}
+    \caption{Task 2 visualization (a)}
+    \label{fig:rad}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/kk.png}
+    \caption{Task 2 visualization (b)}
+    \label{fig:kk}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/fr.png}
+    \caption{Task 2 visualization (c)}
+    \label{fig:fr}
+\end{figure}
 
 \newpage
 
-\bibliography{reports/assignment-3/refs}
+\bibliography{reports/assignment-4/refs}
 
 \end{document}
