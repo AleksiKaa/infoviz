@@ -58,7 +58,7 @@ In this task, I produced visualizations of transformed data using three dimensio
     \frac{x - \mu}{\sigma},
 \end{align*} where $x$ is a column of data, $\mu$ is the mean and $\sigma$ is the standard deviation of the column.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/pca.png}
     \caption{Task 1 visualization (a)}
@@ -67,7 +67,7 @@ In this task, I produced visualizations of transformed data using three dimensio
 
 Figure \ref{fig:pca} shows a PCA performed on the original data and the standardized data. Both PCAs were done using the number of columns, i.e. 39, components, and the 2 dimensions accounting for the most variance are visualized.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/mds.png}
     \caption{Task 1 visualization (b)}
@@ -78,18 +78,22 @@ Figure \ref{fig:pca} shows a PCA performed on the original data and the standard
 
 Figure \ref{fig:mds} shows an MDS using two components performed on the dataset with two different random seeds for initialization.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/tsne.png}
     \caption{Task 1 visualization (c)}
     \label{fig:tsne}
 \end{figure}
 
-Figure \ref{fig:tsne} shows a t-SNE performed on the data using 6 different initializations.
+Figure \ref{fig:tsne} shows a t-SNE performed on the data using 6 different initializations. Each t-SNE was initialized with 2 components, initialization method set to random, and perplexity and seed to the values shown in the visualization.
+
+\newpage
 
 \section{Relational Data}
 
-\begin{table}[h]
+In this task, I produced visualizations portraying the relationships between datapoints. I produced 5 different graph visualizations portraying the interconnections between the SDGs. For this reason, I first had to make an adjacency matrix. I constructed the matrix by first going over each relationship, and deciding whether there is a clear and strong connection between the SDGs. For example, the SDGs "No Poverty" and "Zero Hunger", are in my opinion very strongly connected, thus they share an edge. In the beginning, I had way too many connections, and I had to prune them by going over them again. I decided that to maintain some balance in the plot, each node could be connected to 5 other nodes maximum. This helped pruning the connection space, resulting in a fairly balanced adjacency matrix.
+
+\begin{table}[h!]
     \centering
     \renewcommand{\arraystretch}{1}
     \scalebox{0.7}{\begin{tabular}{c|ccccccccccccccccc}
@@ -117,26 +121,38 @@ Figure \ref{fig:tsne} shows a t-SNE performed on the data using 6 different init
     \label{adj}
 \end{table}
 
-\begin{figure}[h]
+The adjacency matrix is found in table \ref{adj}. In the table, the row and column numbers denote the SDG number given by United Nations. The value of a cell is 1 if there is an edge between the nodes, and 0 otherwise. Each visualization in this task was made using \texttt{networkx} and \texttt{matplotlib}. \texttt{networkx} was used to initialize and structure the graphs and assign layouts to them, while \texttt{matplotlib} was used to create the plots. In each plot, the number inside the node denotes the SDG it is.
+
+\newpage
+
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/radial.png}
+    \includegraphics[width=0.8\linewidth]{reports/assignment-4/imgs/radial.png}
     \caption{Task 2 visualization (a)}
     \label{fig:rad}
 \end{figure}
 
-\begin{figure}[h]
+Figure \ref{fig:rad} shows a plot of the adjacency matrix with a radial layout and numerical ordering. In my opinion, this layout makes finding nodes and fetching connections between nodes very easy and efficient. However, there are shortcomings to this layout, since finding, for example, cliques is very laboursome.
+
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/kk.png}
     \caption{Task 2 visualization (b)}
     \label{fig:kk}
 \end{figure}
 
-\begin{figure}[h]
+Two different Kamada-Kawai layouts are visualized in figure \ref{fig:kk}. A different random seed, producing a random initial layout, was used for both visualizations. This layout makes finding smaller subgraphs within the graph easy, but finding individual nodes is a bit harder because of the unordered nature of the layout. There are a lot less crossing edges than in the radial layout, making the plots a lot cleaner in my opinion.
+
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\linewidth]{reports/assignment-4/imgs/fr.png}
     \caption{Task 2 visualization (c)}
     \label{fig:fr}
 \end{figure}
+
+Figure \ref{fig:fr} shows two different graph visualizations using a Fruchterman-Reingold layout. The plots, like the Kamada-Kawai ones, were obtained using two different random seeds, producing similar, but still different positions for the nodes. The plots are very similar to the Kamada-Kawai plots, an as such, the same observations and notes apply to these plots as well.
+
+As \texttt{networkx} is a fairly new library to me, I had some troubles working with it. The majority of my headaches were caused by trying to create the Kamada-Kawai and Fruchterman-Reingold layouts using the randomization. Neither of the \texttt{networkx} functions for creating the layouts had a random seed as a parameter, so in the beginning, I was a bit stumped. After a bit of searching and reading the documentation, I found a function used for creating a random layout. I used this function for initializing the positions of the nodes, then passing the initial position to the layout function. This resulted in different and reproducible visualizations for different random seeds.
 
 \newpage
 
