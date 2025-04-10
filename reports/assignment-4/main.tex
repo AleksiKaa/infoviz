@@ -53,7 +53,7 @@ In this assignment, I have completed two visualization tasks using data relating
 
 \section{Dimensionality Reduction}
 
-In this task, I produced visualizations of transformed data using three dimensionality reduction methods, Principal Component Analysis (PCA), Multidimensional scaling (MDS) and T-distributed Stochastic Neighbor Embedding (t-SNE). Before reducing the dimensionality, the dataset was transformed in such a way, that it has the countries as rows, years as columns, and the percentage of poverty as cell values. This results in a 164x39 matrix. Additionally, a standardized copy of the dataset was used in one plot. The data was standardized with the formula:
+In this task, I produced visualizations of transformed data using three dimensionality reduction methods, Principal Component Analysis (PCA), Multidimensional scaling (MDS) and T-distributed Stochastic Neighbor Embedding (t-SNE). Before reducing the dimensionality, the dataset was transformed in such a way, that it has the countries as rows, years as columns, and the percentage of poverty as cell values. Additionally, all rows with null values were removed from the dataset. This results in a 164x39 matrix. Finally, a standardized copy of the dataset was used in one plot. The data was standardized with the formula:
 \begin{align*}
     \frac{x - \mu}{\sigma},
 \end{align*} where $x$ is a column of data, $\mu$ is the mean and $\sigma$ is the standard deviation of the column.
@@ -65,7 +65,7 @@ In this task, I produced visualizations of transformed data using three dimensio
     \label{fig:pca}
 \end{figure}
 
-Figure \ref{fig:pca} shows a PCA performed on the original data and the standardized data. Both PCAs were done using the number of columns, i.e. 39, components, and the 2 dimensions accounting for the most variance are visualized. The PCA reduces the column dimensionality (years), into two components, which are then plotted.
+Figure \ref{fig:pca} shows a PCA performed on the original data and the standardized data. Both PCAs were done using the number of columns, i.e. 39, components, and the 2 dimensions accounting for the most variance are visualized. The PCA reduces the column dimensionality (years) into two components, which are then plotted. The plots themselves are almost similar, but the standardized plot has a much smaller range of values on both axes. The plots show a small cluster on the right-hand-side, and the rest of the countries are pretty scattered around the value space.
 
 \begin{figure}[h!]
     \centering
@@ -85,9 +85,11 @@ Figure \ref{fig:mds} shows an MDS using two components performed on the dataset 
     \label{fig:tsne}
 \end{figure}
 
-Figure \ref{fig:tsne} shows a t-SNE performed on the data using 6 different initializations. Each t-SNE was initialized with 2 components, initialization method set to random, and perplexity and seed to the values shown in the visualization.
-
 \newpage
+
+Figure \ref{fig:tsne} shows a t-SNE performed on the data using 6 different initializations. Each t-SNE was initialized with 2 components, initialization method set to random, and perplexity and seed to the values shown in the visualization. As can be seen in the plots, perplexity values of 30 and 50 are far too large, producing plots with no structure whatsoever. The plots with 5 perplexity however, show 3-4 small clusters in them, suggesting similarity between countries.
+
+Working on this task, I encountered some problems that arose mostly due to my lack of experience with these dimensionality reduction methods. At first, it was difficult to produce meaningful plots using the methods, and after that, I had difficulty interpreting the plots. Reading the methods' Wikipedia pages helped me understand the methods better, enabling me to analyze the plots better.
 
 \section{Relational Data}
 
