@@ -65,7 +65,7 @@ In this task, I produced visualizations of transformed data using three dimensio
     \label{fig:pca}
 \end{figure}
 
-Figure \ref{fig:pca} shows a PCA performed on the original data and the standardized data. Both PCAs were done using the number of columns, i.e. 39, components, and the 2 dimensions accounting for the most variance are visualized.
+Figure \ref{fig:pca} shows a PCA performed on the original data and the standardized data. Both PCAs were done using the number of columns, i.e. 39, components, and the 2 dimensions accounting for the most variance are visualized. The PCA reduces the column dimensionality (years), into two components, which are then plotted.
 
 \begin{figure}[h!]
     \centering
@@ -76,7 +76,7 @@ Figure \ref{fig:pca} shows a PCA performed on the original data and the standard
 
 \newpage
 
-Figure \ref{fig:mds} shows an MDS using two components performed on the dataset with two different random seeds for initialization.
+Figure \ref{fig:mds} shows an MDS using two components performed on the dataset with two different random seeds for initialization. Both plots show a large cluster of points, which means that many of the countries are similar in their development over the years (the Euclidean distance between two row vectors is fairly small). This cluster is most likely the countries that have a large share of poverty in the beginning of the time interval and in the end, since they are largest in number in the dataset. Then, the points closer to the cluster but clearly outside it are the countries that have had a change in the poverty share over the years, and lastly the points furthest away from the cluster are the points that have had a relatively low share of poverty throughout the time interval.
 
 \begin{figure}[h!]
     \centering
